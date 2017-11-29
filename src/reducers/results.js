@@ -1,5 +1,5 @@
 const initialState = {
-        current_search: 'USA',
+        currentSearch: 'USA',
         matches: [
             {
                 match_number:7,
@@ -55,11 +55,12 @@ const initialState = {
         ]
 };
 
+export const updateSearch = (val) => ({type:'SEARCH_UPDATE', payload: val});
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case 'UPDATE_SEARCH':
-            return {...state, current_search: action.payload};
+        case 'SEARCH_UPDATE':
+            return {...state, currentSearch: action.payload};
         default:
             return state;
     }
