@@ -16,12 +16,11 @@ class App extends Component {
                     </form>
                     <div className="Matches-Results">
                         <ul>
-                            <li>USA [1] x [0] AUS</li>
-                            <li>BRA [1] x [0] ARG</li>
-                            <li>BRA [1] x [0] ARG</li>
-                            <li>BRA [1] x [0] ARG</li>
-                            <li>BRA [1] x [0] ARG</li>
-                            <li>BRA [1] x [0] ARG</li>
+                            {this.props.matches.map(match => (
+                                <li key={match.match_number}>
+                                    {match.home_team.code} [{match.home_team.goals}] x [{match.away_team.goals}] {match.away_team.code}
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
