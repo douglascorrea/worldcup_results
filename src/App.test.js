@@ -9,6 +9,6 @@ it('renders without crashing', () => {
 
 it('renders App-container div', () => {
     const wrapper = shallow(<App/>);
-    expect(wrapper.find('div.App-container').exists()).toBeTruthy();
+    expect(wrapper.find('div.App-container')).toBePresent();
 });
 

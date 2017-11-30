@@ -32,6 +32,7 @@
     "server_build": "pushstate-server build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "dev-server": "json-server -p 8080 db.json"
+    "dev-server": "json-server -p 8080 db.json",
+    "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom"
   }
 }

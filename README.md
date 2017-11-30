@@ -20,3 +20,7 @@ Please install watchman to run tests on watch mode:
 ```yarn test```
 
 As said above, it will automatically run on using ```yarn start_dev```
+
+For getting coverage stats run:
+
+``` yarn test --coverage ```
