@@ -14,5 +14,5 @@ const MatchList = ({matches}) => (
 );
 
 export default connect(
-    (state) => ({matches: state.matches}),
+    (state) => ({matches: state.result.matches}),
 )(MatchList);

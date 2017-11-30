@@ -25,6 +25,6 @@ const CountryForm = (props) => {
 };
 
 export default connect(
-    (state) => ({currentSearch: state.currentSearch}),
+    (state) => ({currentSearch: state.result.currentSearch}),
     (dispatch) => bindActionCreators({updateSearch, fetchMatches}, dispatch)
 )(CountryForm)

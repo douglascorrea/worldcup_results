@@ -1,5 +1,5 @@
 import {getMatches} from "../api/resultsServices";
-
+import {showMessage} from "./messages";
 // initialState
 const initialState = {
     currentSearch: 'USA',
@@ -7,8 +7,8 @@ const initialState = {
 };
 
 // action constants
-const SEARCH_UPDATE = 'SEARCH_UPDATE';
-const MATCHES_LOAD = 'MATCHES_LOAD';
+export const SEARCH_UPDATE = 'SEARCH_UPDATE';
+export const MATCHES_LOAD = 'MATCHES_LOAD';
 
 // sync action creators
 export const updateSearch = (val) => ({type: SEARCH_UPDATE, payload: val});
@@ -16,6 +16,7 @@ export const loadMatches = (matches) => ({type: MATCHES_LOAD, payload: matches})
 // async action creators
 export const fetchMatches = (currentSearch) => {
     return (dispatch) => {
+        dispatch(showMessage('Loading results'));
         getMatches(currentSearch)
             .then(matches => dispatch(loadMatches(matches)))
     }

@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import CountryForm from './components/CountryForm'
 import MatchList from './components/MatchList'
+import Message from './components/Message'
 
 class App extends Component {
     render() {
@@ -15,6 +16,7 @@ class App extends Component {
                 </header>
                 <div className="App-container">
                     <div className="Matches-Results">
+                        <Message />
                         <CountryForm currentSearch={this.props.currentSearch} updateSearch={this.props.updateSearch} />
                         <MatchList />
                     </div>
