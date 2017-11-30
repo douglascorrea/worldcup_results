@@ -7,10 +7,11 @@ export default (props) => {
         updateSearch(val);
     };
     return (
-        <form>
+        <form onSubmit={}>
         <input type="text"
                onChange={handleInputChange}
                value={currentSearch}/>
+            <button type="submit">Search</button>
     </form>
     )
 }
