@@ -13,7 +13,7 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start_dev": "npm-run-all -p test build_css_dev watch_less_dev dev-server start",
+    "start_dev": "npm-run-all -p build_css_dev watch_less_dev dev-server start",
     "start_prod": "npm-run-all -s build server_build",
     "build_css_dev": "lessc --clean-css='--compatibility=ie8 --advanced' ./src/App.less ./src/App.css --source-map=./src/App.css.map",
     "watch_less_dev": "less-watch-compiler src src --source-map",
