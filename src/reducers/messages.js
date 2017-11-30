@@ -1,6 +1,6 @@
 import {MATCHES_LOAD} from './results'
 
-const MESSAGE_SHOW = 'MESSAGE_SHOW';
+export const MESSAGE_SHOW = 'MESSAGE_SHOW';
 
 export const showMessage = (message) => ({type: MESSAGE_SHOW, payload: message});
 

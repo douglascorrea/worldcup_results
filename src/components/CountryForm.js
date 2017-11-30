@@ -16,7 +16,8 @@ export const CountryForm = (props) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text"
+            <input name="searchInput"
+                   type="text"
                    onChange={handleInputChange}
                    value={currentSearch}/>
             <button type="submit">Search</button>
