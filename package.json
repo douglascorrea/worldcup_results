@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "jest-enzyme": "^4.0.1",
     "json-server": "^0.12.1",
     "less": "^2.7.3",
     "less-plugin-clean-css": "^1.5.1",
@@ -13,12 +16,13 @@
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.17",
+    "react-test-renderer": "^16.2.0",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start_dev": "npm-run-all -p build_css_dev watch_less_dev dev-server start",
+    "start_dev": "npm-run-all -p test build_css_dev watch_less_dev dev-server start",
     "start_prod": "npm-run-all -s build server_build",
     "build_css_dev": "lessc --clean-css='--compatibility=ie8 --advanced' ./src/App.less ./src/App.css --source-map=./src/App.css.map",
     "watch_less_dev": "less-watch-compiler src src --source-map",

@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux'
-import logo from './images/logo.svg';
 import './App.css';
 import CountryForm from './components/CountryForm'
 import MatchList from './components/MatchList'
@@ -21,4 +19,4 @@ class App extends Component {
         );
     }
 }
-export default connect()(App);
+export default App;

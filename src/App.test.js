@@ -1,8 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {shallow} from 'enzyme';
 import App from './App';
 
+// shallow rendering tests
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+    shallow(<App/>);
 });
+
+it('renders App-container div', () => {
+    const wrapper = shallow(<App/>);
+    expect(wrapper.find('div.App-container').exists()).toBeTruthy();
+});
+
