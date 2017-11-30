@@ -29,7 +29,7 @@
 
 /*temporary css*/
 .App-container {
-    padding-top: 25px;
+    padding-top: 45px;
     display: inline-block;
 }
 
@@ -61,10 +61,13 @@ li {
 }
 
 .loading-message {
-    padding: 25px 0;
-    background-image: url('./images/Spinner.svg');
+    position: absolute;
+    padding: 2px 0 0 34px;
+    top: 21%;
+    left: 46%;
+    background-image: url(./images/Spinner.svg);
     background-repeat: no-repeat;
-    background-size: 25%;
-    background-position: top;
+    background-size: 22%;
+    background-position: left;
 }
 
