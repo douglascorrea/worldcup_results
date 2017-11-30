@@ -1,4 +1,5 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
 const Match = ({match_number, home_team, away_team}) => (
     <li>
@@ -6,8 +7,12 @@ const Match = ({match_number, home_team, away_team}) => (
     </li>
 );
 
-export default (props) => (
+const MatchList = ({matches}) => (
     <ul>
-        {props.matches.map(match => <Match key={match.match_number} {...match}/>)}
+        {matches.map(match => <Match key={match.match_number} {...match}/>)}
     </ul>
-)
+);
+
+export default connect(
+    (state) => ({matches: state.matches})
+)(MatchList);

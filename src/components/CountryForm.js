@@ -1,17 +1,25 @@
 import React from 'react'
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import {updateSearch} from "../reducers/results";
 
-export default (props) => {
+const CountryForm = (props) => {
     const {currentSearch, updateSearch} = props;
     const handleInputChange = (evt) => {
         const val = evt.target.value;
         updateSearch(val);
     };
     return (
-        <form onSubmit={}>
-        <input type="text"
-               onChange={handleInputChange}
-               value={currentSearch}/>
+        <form>
+            <input type="text"
+                   onChange={handleInputChange}
+                   value={currentSearch}/>
             <button type="submit">Search</button>
-    </form>
+        </form>
     )
-}
+};
+
+export default connect(
+    (state) => ({currentSearch: state.currentSearch}),
+    (dispatch) => bindActionCreators({updateSearch}, dispatch)
+)(CountryForm)

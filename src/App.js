@@ -2,10 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import logo from './logo.svg';
 import './App.css';
-import {updateSearch} from "./reducers/results";
 import CountryForm from './components/CountryForm'
 import MatchList from './components/MatchList'
-import {bindActionCreators} from "redux";
 
 class App extends Component {
     render() {
@@ -18,13 +16,11 @@ class App extends Component {
                 <div className="App-container">
                     <div className="Matches-Results">
                         <CountryForm currentSearch={this.props.currentSearch} updateSearch={this.props.updateSearch} />
-                        <MatchList matches={this.props.matches} />
+                        <MatchList />
                     </div>
                 </div>
             </div>
         );
     }
 }
-const mapStateToProps = (state) => state;
-const mapDispatchToProps = (dispatch) => bindActionCreators({updateSearch}, dispatch);
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect()(App);
