@@ -1,4 +1,4 @@
-export const getMatches = () => {
-    return fetch('http://localhost:8080/matches')
+export const getMatches = (countryCode) => {
+    return fetch(`http://localhost:8080/${countryCode}`)
         .then(res => res.json())
 };

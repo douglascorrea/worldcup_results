@@ -1,16 +1,21 @@
 import React from 'react'
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
-import {updateSearch} from "../reducers/results";
+import {fetchMatches, updateSearch} from "../reducers/results";
 
 const CountryForm = (props) => {
-    const {currentSearch, updateSearch} = props;
+    const {currentSearch, updateSearch, fetchMatches} = props;
     const handleInputChange = (evt) => {
         const val = evt.target.value;
         updateSearch(val);
     };
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+        fetchMatches(currentSearch);
+    };
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <input type="text"
                    onChange={handleInputChange}
                    value={currentSearch}/>
@@ -21,5 +26,5 @@ const CountryForm = (props) => {
 
 export default connect(
     (state) => ({currentSearch: state.currentSearch}),
-    (dispatch) => bindActionCreators({updateSearch}, dispatch)
+    (dispatch) => bindActionCreators({updateSearch, fetchMatches}, dispatch)
 )(CountryForm)

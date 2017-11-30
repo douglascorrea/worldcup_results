@@ -14,9 +14,9 @@ const MATCHES_LOAD = 'MATCHES_LOAD';
 export const updateSearch = (val) => ({type: SEARCH_UPDATE, payload: val});
 export const loadMatches = (matches) => ({type: MATCHES_LOAD, payload: matches});
 // async action creators
-export const fetchMatches = () => {
+export const fetchMatches = (currentSearch) => {
     return (dispatch) => {
-        getMatches()
+        getMatches(currentSearch)
             .then(matches => dispatch(loadMatches(matches)))
     }
 };
