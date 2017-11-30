@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import logo from './logo.svg';
+import logo from './images/logo.svg';
 import './App.css';
 import CountryForm from './components/CountryForm'
 import MatchList from './components/MatchList'

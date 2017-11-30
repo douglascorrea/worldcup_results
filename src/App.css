@@ -29,7 +29,8 @@
 
 /*temporary css*/
 .App-container {
-    padding-top: 20px;
+    padding-top: 25px;
+    display: inline-block;
 }
 
 input {
@@ -37,6 +38,7 @@ input {
     padding: 2px 0;
     vertical-align: bottom;
 }
+
 button {
     background-color: #679FFF;
     border: none;
@@ -48,6 +50,7 @@ button {
     font-size: 16px;
     margin-left: 5px;
 }
+
 ul {
     padding: 0px;
 }
@@ -55,5 +58,13 @@ ul {
 li {
     list-style-type: none;
     font-size: 30px;
+}
+
+.loading-message {
+    padding: 25px 0;
+    background-image: url('./images/Spinner.svg');
+    background-repeat: no-repeat;
+    background-size: 25%;
+    background-position: top;
 }
 
