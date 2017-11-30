@@ -4,6 +4,11 @@
   "private": true,
   "dependencies": {
     "json-server": "^0.12.1",
+    "less": "^2.7.3",
+    "less-plugin-clean-css": "^1.5.1",
+    "less-watch-compiler": "^1.9.0",
+    "npm-run-all": "^4.1.2",
+    "pushstate-server": "^3.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
@@ -13,9 +18,14 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start_dev": "json-server -p 8080 db.json && react-scripts start",
-    "start_prod": "react-scripts build && pushstate-server build",
-    "build": "react-scripts build",
+    "start_dev": "npm-run-all -p build_css_dev watch_less_dev dev-server start",
+    "start_prod": "npm-run-all -s build server_build",
+    "build_css_dev": "lessc --clean-css='--compatibility=ie8 --advanced' ./src/App.less ./src/App.css --source-map=./src/App.css.map",
+    "watch_less_dev": "less-watch-compiler src src --source-map",
+    "start": "react-scripts start",
+    "build_js": "react-scripts build",
+    "build": "npm-run-all -s build_css_dev build_js",
+    "server_build": "pushstate-server build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "dev-server": "json-server -p 8080 db.json"
